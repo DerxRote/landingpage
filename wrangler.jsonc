@@ -1,0 +1,21 @@
+{
+  // Startseite pfleger.work auf Cloudflare Workers (Repo DerxRote/landingpage).
+  // Statische Seite aus public/. src/worker.js leitet nur www.pfleger.work auf pfleger.work um.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "pfleger-work",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "pfleger.work", "custom_domain": true },
+    { "pattern": "www.pfleger.work", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

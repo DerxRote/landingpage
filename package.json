@@ -1,0 +1,12 @@
+{
+  "name": "pfleger-work",
+  "private": true,
+  "description": "Startseite pfleger.work",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.155.0"
+  }
+}
